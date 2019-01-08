@@ -84,13 +84,14 @@ while True:
         cv2.putText(frame, EMOTIONS[maxindex], (10, 360),
                     font, 2, (255, 255, 255), 2, cv2.LINE_AA)
         face_image = feelings_faces[maxindex]
+        print(EMOTIONS[maxindex])
 
         for c in range(0, 3):
             # The shape of face_image is (x,y,4). The fourth channel is 0 or 1. In most cases it is 0, so, we assign the roi to the emoji.
             # You could also do: frame[200:320,10:130,c] = frame[200:320, 10:130, c] * (1.0 - face_image[:, :, 3] / 255.0)
             frame[200:320, 10:130, c] = face_image[:, :, c] * \
                 (face_image[:, :, 3] / 255.0) + frame[200:320,
-                                                      10:130, c] * (1.0 - face_image[:, :, 3] / 255.0)
+                                                      10: 130, c] * (1.0 - face_image[:, :, 3] / 255.0)
 
     if len(faces) > 0:
         # draw box around faces
@@ -104,9 +105,9 @@ while True:
             result = network.predict(newimg)
             if result is not None:
                 maxindex = np.argmax(result[0])
-                font = cv2.FONT_HERSHEY_SIMPLEX
-                cv2.putText(
-                    frame, EMOTIONS[maxindex], (x+5, y-35), font, 2, (255, 255, 255), 2, cv2.LINE_AA)
+                # font = cv2.FONT_HERSHEY_SIMPLEX
+                # cv2.putText(
+                # frame, EMOTIONS[maxindex], (x+5, y-35), font, 2, (255, 255, 255), 2, cv2.LINE_AA)
 
     cv2.imshow('Video', cv2.resize(frame, None, fx=2,
                                    fy=2, interpolation=cv2.INTER_CUBIC))

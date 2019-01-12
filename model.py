@@ -92,6 +92,6 @@ if __name__ == "__main__":
     #     import singleface
     # if sys.argv[1] == 'multiface':
     #     import multiface
-    if sys.argv[1] == 'videofile':
-        import videofile
+    # if sys.argv[1] == 'videofile':
+    import videofile
     # if sys.argv[1] == 'train':

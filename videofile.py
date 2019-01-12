@@ -53,7 +53,10 @@ def format_image(image):
 network = EMR()
 network.build_network()
 
-cap = cv2.VideoCapture("./test.mp4")
+name = sys.argv[1]
+name = './' + name
+
+cap = cv2.VideoCapture(name)
 font = cv2.FONT_HERSHEY_SIMPLEX
 feelings_faces = []
 

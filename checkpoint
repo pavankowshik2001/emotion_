@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/terng/Desktop/work/INOX/emotion_detection/model_test_atul.tflearn"
+all_model_checkpoint_paths: "/Users/terng/Desktop/work/INOX/emotion_detection/model_test_atul.tflearn"

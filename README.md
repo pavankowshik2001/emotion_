@@ -9,6 +9,8 @@ run in single face :
 run in multipleface :
   python model.py multipleface 
   
+I have already commented code of singleface and multiface. It can only run in videofile.
+  
 next goal :
   run detection in video,
   store output to json file,

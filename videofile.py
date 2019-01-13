@@ -60,6 +60,12 @@ cap = cv2.VideoCapture(name)
 font = cv2.FONT_HERSHEY_SIMPLEX
 feelings_faces = []
 
+frame_width = int(cap.get(3))
+frame_height = int(cap.get(4))
+
+out = cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc(
+    'M', 'J', 'P', 'G'), 10, (frame_width, frame_height))
+
 # append the list with the emoji images
 for index, emotion in enumerate(EMOTIONS):
     feelings_faces.append(cv2.imread('./emojis/' + emotion + '.png', -1))
@@ -105,9 +111,9 @@ while True:
             newimg = cv2.resize(
                 newimg, (48, 48), interpolation=cv2.INTER_CUBIC) / 255.
             result = network.predict(newimg)
-
-    cv2.imshow('Video', cv2.resize(frame, None, fx=2,
-                                   fy=2, interpolation=cv2.INTER_CUBIC))
+    out.write(frame)
+    # cv2.imshow('Video', cv2.resize(frame, None, fx=2,
+                                #    fy=2, interpolation=cv2.INTER_CUBIC))
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 

@@ -102,8 +102,8 @@ while True:
         (x, y, w, h) = max_area_face
         frame = cv2.rectangle(frame, (x, y-50), (x+w, y+h+10), (255, 0, 0), 2)
 
-    cv2.imshow('Video', cv2.resize(frame, None, fx=2,
-                                   fy=2, interpolation=cv2.INTER_CUBIC))
+    cv2.imshow('Video', cv2.resize(frame, None, fx=1,
+                                   fy=1, interpolation=cv2.INTER_CUBIC))
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 

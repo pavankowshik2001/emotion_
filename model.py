@@ -79,8 +79,8 @@ class EMR:
         """
         Loads pre-trained model.
         """
-        if isfile("model_1_atul.tflearn.meta"):
-            self.model.load("model_1_atul.tflearn")
+        if isfile("model/model_1_atul.tflearn.meta"):
+            self.model.load("model/model_1_atul.tflearn")
         else:
             print("---> Couldn't find model")
 
@@ -90,8 +90,8 @@ if __name__ == "__main__":
     network = EMR()
     # if sys.argv[1] == 'singleface':
     #     import singleface
-    # if sys.argv[1] == 'multiface':
-    #     import multiface
+    if sys.argv[1] == 'multiface':
+        import multiface
     # if sys.argv[1] == 'videofile':
     import videofile
     # if sys.argv[1] == 'train':

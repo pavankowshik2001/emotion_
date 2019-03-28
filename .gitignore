@@ -1,3 +1,5 @@
 model_1_atul.tflearn.data-00000-of-00001
 model_1_atul.tflearn.index
 model_1_atul.tflearn.meta
+*.avi
+*.pyc
